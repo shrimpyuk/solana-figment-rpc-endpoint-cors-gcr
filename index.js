@@ -4,6 +4,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const proxyMiddleware = createProxyMiddleware({
   target: process.env.FIGMENT_URL,
+  ws: true,
   changeOrigin: true,
   headers: {
     Authorization: process.env.FIGMENT_TOKEN,
